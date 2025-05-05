@@ -1,31 +1,47 @@
-Airbnb Montreal Churn Prediction Using Logistic Regression and Power BI
-Developed an end-to-end predictive analytics pipeline to identify host churn in Airbnb listings specific to Montreal. This project applied logistic regression to classify listings as “churned” or “active” based on historical activity, availability, and listing behavior. The goal was to generate actionable insights into host disengagement using both machine learning and business intelligence tools.
+# Airbnb Montreal Churn Prediction
 
-Key Components
-Data Preparation and Cleaning
-Cleaned and preprocessed the Montreal Airbnb dataset using pandas. Filled missing values, one-hot encoded room_type, and selected relevant features like availability_365 and reviews_per_month.
+This project builds an end-to-end predictive analytics pipeline to identify **host churn** in Airbnb listings across **Montreal**. It uses **logistic regression** and **Power BI** to classify listings as “churned” or “active” based on historical activity, availability, and host behavior.
 
-Feature Engineering
-Created a churned label by identifying listings with zero availability or recent reviews — a proxy for inactive hosts.
+---
 
-Model Building with Scikit-learn
-Trained a logistic regression model using balanced class weights to address data imbalance. Evaluated with accuracy, ROC-AUC, and classification report.
+## 🔍 Key Components
 
-Export for Visualization
-Saved model predictions to airbnb_churn_output.csv for further analysis.
+- **Data Preparation and Cleaning**  
+  Preprocessed the dataset using `pandas`: filled missing values, one-hot encoded `room_type`, and selected features like `availability_365` and `reviews_per_month`.
 
-Power BI Dashboard
-Designed visuals to show:
+- **Feature Engineering**  
+  Created a binary `churned` label using availability and reviews as proxies for host activity.
 
-Churn rate by stay duration
+- **Model**  
+  Trained a `LogisticRegression` model with `class_weight='balanced'` to handle data imbalance.
 
-Churn across room types
+- **Evaluation Metrics**  
+  - Accuracy: **66%**  
+  - AUC Score: **0.75**  
+  - Confusion matrix and classification report
 
-Comparison of active vs. churned hosts
+- **Export for Visualization**  
+  Saved predictions to `airbnb_churn_output.csv` for Power BI dashboarding.
 
-Tech Stack
-Python: pandas, scikit-learn, matplotlib, seaborn
+- **Power BI Dashboard**  
+  Visualized:
+  - Churn rate by **stay duration**
+  - Churn across **room types**
 
-Power BI: For dashboard creation and insights
+---
 
-Git & GitHub: For version control and public sharing
+## ⚙️ Tech Stack
+
+- **Python:** pandas, scikit-learn, matplotlib, seaborn  
+- **Power BI:** For dashboards and visual insights  
+- **Git & GitHub:** For version control and collaboration
+
+---
+
+## 🚀 Getting Started
+
+```bash
+git clone https://github.com/abhayau2001/airbnb-montreal-churn.git
+cd airbnb-montreal-churn
+pip install -r requirements.txt
+python model/airbnb_dynamic_pricing.py
